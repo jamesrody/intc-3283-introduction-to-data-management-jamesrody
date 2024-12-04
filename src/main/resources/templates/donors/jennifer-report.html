@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>INTC-3283 - Welcome</title>
+  <link type="text/css" rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.css}">
+  <script type="text/javascript" th:src="@{/webjars/bootstrap/js/bootstrap.bundle.js}"></script>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 style="padding-bottom: 20px">Jennifer's Report</h1>
+      <h2>Weekly Report</h2>
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Week Donated</th>
+          <th>Total Donated</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${jenniferWeekly}">
+          <td th:text="${row.week_donated}" style="width: 50%"></td>
+          <td th:text="${row.total_donated}"></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2>Monthly Report</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Month Donated</th>
+          <th>Total Donated</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${jenniferMonthly}">
+          <td th:text="${row.month_donated}" style="width: 50%"></td>
+          <td th:text="${row.total_donated}"></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <h2>Top 5</h2>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Donor ID</th>
+          <th>Total Donated</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="row : ${jenniferTop5}">
+          <td th:text="${row.donor_id}" style="width: 50%"></td>
+          <td th:text="${row.total_donated}"></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>
